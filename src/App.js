@@ -1,24 +1,20 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
-import SearchIcon from '@material-ui/icons/Search';
 
-import Search from "./Components/Search";
-import Appbar from "./Components/Appbar"
-import Table from "./Components/Table"
+import SearchIcon from '@material-ui/icons/Search';
+import { BrowserRouter as Router, Route, Link, } from 'react-router-dom'
+import Home from './Components/Home'
+import NewCustomer from './Components/NewCustomer'
 
 function App() {
   return (
     <div className="App">
-     <Appbar/>
-     <div>
-     <SearchIcon style={{width:"80px",marginTop:"70px"}} />
-    
-     <text>Search</text>
+    <Router>
+   
+      <Route exact path='/' component={Home}/>
      
-       <button style={{marginLeft:"50px", height:"40px",backgroundColor:"green"}}> Create New product</button>
-     </div>
-     <Table/>
+    
+    </Router>
     </div>
   );
 }
