@@ -4,6 +4,7 @@ import logo from './logo.svg';
 import SearchIcon from '@material-ui/icons/Search';
 import { BrowserRouter as Router, Route, Link, } from 'react-router-dom'
 import Home from './Components/Home'
+import Home2 from './ProductComponent/Components/Home'
 import NewCustomer from './Components/NewCustomer'
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <Router>
    
       <Route exact path='/' component={Home}/>
+      <Route exact path='/product' component={Home2}/>
      
     
     </Router>

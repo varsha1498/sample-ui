@@ -46,14 +46,15 @@ export default function BasicTable() {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>FirstName</TableCell>
-            <TableCell align="right">LastName</TableCell>
-            <TableCell align="right">Email</TableCell>
-            <TableCell align="right">Address</TableCell>
-            <TableCell align="right">ContactNo</TableCell>
-            <TableCell align="right">LandLine</TableCell>
+            <TableCell>ProductName</TableCell>
+            <TableCell align="right">Description</TableCell>
+            <TableCell align="right">Price</TableCell>
+            <TableCell align="right">Quantity</TableCell>
+            <TableCell align="right">Catagory</TableCell>
             <TableCell align="right">Edit</TableCell>
             <TableCell align="right">Delete</TableCell>
+           
+           
           </TableRow>
         </TableHead>
         <TableBody>
