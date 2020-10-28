@@ -14,7 +14,7 @@ function App() {
      <div>
      <SearchIcon style={{width:"80px",marginTop:"70px"}} />
     
-     <text>Search</text>
+     <h2>Search</h2>
      <NewCustomer/>
      </div>
      <Table/>

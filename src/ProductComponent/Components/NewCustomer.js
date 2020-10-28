@@ -13,7 +13,6 @@ export default function NewCustomer(props){
     const onSubmit = (e) =>{
         e.preventDefault();
         const newObj = {
-            id: 2,
             firstName: firstName,
             lastName: lastName,
             email: email,
@@ -22,7 +21,6 @@ export default function NewCustomer(props){
             landline: landline,
         }
         props.create(newObj);
-        setId(0);
         setFirstName("");
         setLastName("");
         setEmail("");

@@ -12,9 +12,8 @@ function App() {
     <div className="App">
      <Appbar/>
      <div>
-     <SearchIcon style={{width:"80px",marginTop:"70px"}} />
+     <SearchIcon style={{width:"80px",marginTop:"70px"}} />   <div>Search</div>
     
-     <text>Search</text>
      <NewCustomer/>
      </div>
      <Table/>
