@@ -19,6 +19,8 @@ export default function BasicTable() {
   const classes = useStyles();
   const [rows,setRows]=useState([])
   const [isModal,setModal] = useState(false);
+  const [tempId, setTempId] = useState(null);
+  let event;
   useEffect(()=>{
     axios.get("http://localhost:8080/customers/getAllCustomers")
     .then((res)=>{
@@ -33,18 +35,24 @@ export default function BasicTable() {
     const row1=rows.filter(item=>item.id!=id);
     setRows(row1)
   }
-  const onSubmit = ()=>{
+  const onSubmit = (e)=>{
+    e.preventDefault();
     console.log("I am submitting");
   }
-  const DisplayModal = (id) => {
-  const event = rows.filter(row=>id===row.id) ;
-  console.log(event);
 
-    return (
+  const onClose = ()=>{
+    setModal(false);
+    setTempId(null);
+  }
+  const DisplayModal = () => {
+  const eventArr = rows.filter(row=>tempId===row.id) ;
+  event = eventArr[0];
+  
+      return (
       <div className="modal-form">
-            <form onSubmit={onSubmit} className = "modal-container" >
+            <form onSubmit={(e)=>onSubmit(e)} className = "modal-container" >
                 <div className="close-btn">
-                    <div onClick={()=>setModal(false)}>
+                    <div onClick={onClose}>
                         Close
                     </div>
                 </div>
@@ -101,11 +109,11 @@ export default function BasicTable() {
 
   const handleEdit=(event,id)=>{
     event.preventDefault();
+    setTempId(id);
     setModal(true);
     console.log(isModal);
     console.log("I will edit");
     console.log(id);
-    {isModal && DisplayModal(id)}
   }
 
   return (
@@ -141,7 +149,7 @@ export default function BasicTable() {
           ))}
            
         </TableBody>
-       
+        {isModal && DisplayModal()}
       </Table>
     </TableContainer>
   );
